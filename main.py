@@ -18,7 +18,8 @@ def connect_to_db(host, dbname, user, password):
         # Se o usuário falhou na tentativa de login 5 vezes, verifique o tempo de bloqueio
         if time.time() - lock_start_time < 300:
             remaining_time = 300 - (time.time() - lock_start_time)
-            print(f"Você deve aguardar {int(remaining_time // 60)} minutos e {int(remaining_time % 60)} segundos antes de tentar novamente.")
+            print(
+                f"Você deve aguardar {int(remaining_time // 60)} minutos e {int(remaining_time % 60)} segundos antes de tentar novamente.")
             return
         else:
             # Se o tempo de bloqueio expirou, redefina failed_attempts e permita que o usuário tente fazer login novamente
@@ -43,7 +44,6 @@ def connect_to_db(host, dbname, user, password):
             lock_start_time = time.time()
 
 
-
 def open_data_window(conn):
     data_window = tk.Toplevel()
     data_window.title("Dados do Banco de Dados")
@@ -59,17 +59,18 @@ def open_data_window(conn):
     table_dropdown.pack()
 
     # Botão para selecionar os campos
-    select_fields_button = tk.Button(data_window, text="Selecionar campos", command=lambda: select_fields(conn, table_var.get()))
+    select_fields_button = tk.Button(data_window, text="Selecionar campos",
+                                     command=lambda: select_fields(conn, table_var.get()))
     select_fields_button.pack()
 
     # Botão para exportar dados em CSV
-    export_button = tk.Button(data_window, text="Exportar CSV", command=lambda: export_data_to_csv(conn, table_var.get()))
+    export_button = tk.Button(data_window, text="Exportar CSV",
+                              command=lambda: export_data_to_csv(conn, table_var.get()))
     export_button.pack()
 
     # Botão para fechar a janela de dados
     exit_button = tk.Button(data_window, text="Sair", command=data_window.quit)
     exit_button.pack()
-
 
 
 def get_tables(conn):

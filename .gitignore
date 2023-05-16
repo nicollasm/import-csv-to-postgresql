@@ -1,0 +1,19 @@
+# Arquivos de configuração
+config.ini
+
+# Arquivos e diretórios de ambiente virtual Python
+venv/
+*.pyc
+__pycache__/
+
+# Arquivos e diretórios gerados pelo PyCharm
+.idea/
+
+# Logs e bancos de dados
+*.log
+*.sql
+*.sqlite
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db

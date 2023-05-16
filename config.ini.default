@@ -1,5 +1,12 @@
 [DATABASE]
+# Preencha com o endereço do seu servidor de banco de dados
 host =
+
+# Preencha com o nome do seu banco de dados
 dbname =
+
+# Preencha com o seu nome de usuário do banco de dados
 user =
+
+# Preencha com a sua senha do banco de dados
 password =
